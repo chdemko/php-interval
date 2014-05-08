@@ -264,6 +264,10 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * Tests  Interval::contains
 	 *
+	 * @param   string   $string     Interval as a string
+	 * @param   float    $value      Value to be tested
+	 * @param   boolean  $contained  Contained flag
+	 *
 	 * @return  void
 	 *
 	 * @covers  chdemko\Interval\Interval::contains
