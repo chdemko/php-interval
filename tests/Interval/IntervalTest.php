@@ -53,15 +53,15 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function cases_fromString()
 	{
-		return array(
-			array('[2,3[', false),
-			array(']2,3]', false),
-			array(']-INF,INF[', false),
-			array(']a,3[', true),
-			array('[-INF,INF[', true),
-			array(']-INF,INF]', true),
-			array('uncorrect', true),
-		);
+		return [
+			['[2,3[', false],
+			[']2,3]', false],
+			[']-INF,INF[', false],
+			[']a,3[', true],
+			['[-INF,INF[', true],
+			[']-INF,INF]', true],
+			['uncorrect', true],
+		];
 	}
 
 	/**
@@ -253,12 +253,12 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function cases_contains()
 	{
-		return array(
-			array('[2,3[', 2, true),
-			array(']2,3[', 2, false),
-			array('[2,3[', 3, false),
-			array('[2,3]', 3, true),
-		);
+		return [
+			['[2,3[', 2, true],
+			[']2,3[', 2, false],
+			['[2,3[', 3, false],
+			['[2,3]', 3, true],
+		];
 	}
 
 	/**
