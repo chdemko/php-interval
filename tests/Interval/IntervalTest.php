@@ -284,4 +284,22 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 			$interval->contains($value)
 		);
 	}
+
+	/**
+	 * Tests  Interval::jsonSerialize
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::jsonSerialize
+	 *
+	 * @since   1.0.0
+	 */
+	public function test_jsonSerialize()
+	{
+		$interval = new Interval(2, true, 3, false);
+		$this->assertEquals(
+			'{"inf":2,"infIncluded":true,"sup":3,"supIncluded":false}',
+			json_encode($interval)
+		);
+	}
 }

@@ -21,7 +21,7 @@ namespace chdemko\Interval;
  * 
  * @since    1.0.0
  */
-class Interval
+class Interval implements \JsonSerializable
 {
 	/**
 	 * @var     number  inf mark
@@ -274,20 +274,6 @@ class Interval
 	}
 
 	/**
-	 * Convert the object to a string
-	 *
-	 * @return  string  String representation of this object
-	 *
-	 * @since   1.0.0
-	 */
-	public function __toString()
-	{
-		return
-			($this->infIncluded ? '[' : ']') . $this->inf . ',' .
-			$this->sup . ($this->supIncluded ? ']' : '[');
-	}
-
-	/**
 	 * Test if a value is contained in the interval
 	 *
 	 * @param   float  $value  Value to be tested
@@ -301,5 +287,36 @@ class Interval
 		return
 			($this->infIncluded ? ($value >= $this->inf) : ($value > $this->inf)) &&
 			($this->supIncluded ? ($value <= $this->sup) : ($value < $this->sup));
+	}
+
+	/**
+	 * Serialize the object
+	 *
+	 * @return  array  Array of values
+	 *
+	 * @since   1.0.0
+	 */
+	public function jsonSerialize()
+	{
+		return [
+			'inf' => $this->inf,
+			'infIncluded' => $this->infIncluded,
+			'sup' => $this->sup,
+			'supIncluded' => $this->supIncluded
+		];
+	}
+
+	/**
+	 * Convert the object to a string
+	 *
+	 * @return  string  String representation of this object
+	 *
+	 * @since   1.0.0
+	 */
+	public function __toString()
+	{
+		return
+			($this->infIncluded ? '[' : ']') . $this->inf . ',' .
+			$this->sup . ($this->supIncluded ? ']' : '[');
 	}
 }
