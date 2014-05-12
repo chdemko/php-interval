@@ -301,5 +301,11 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 			'{"inf":2,"infIncluded":true,"sup":3,"supIncluded":false}',
 			json_encode($interval)
 		);
+
+		$interval = Interval::universe();
+		$this->assertEquals(
+			'[]',
+			json_encode($interval)
+		);
 	}
 }

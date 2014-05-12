@@ -298,12 +298,21 @@ class Interval implements \JsonSerializable
 	 */
 	public function jsonSerialize()
 	{
-		return [
-			'inf' => $this->inf,
-			'infIncluded' => $this->infIncluded,
-			'sup' => $this->sup,
-			'supIncluded' => $this->supIncluded
-		];
+		$array = [];
+
+		if (!is_infinite($this->inf))
+		{
+			$array['inf'] = $this->inf;
+			$array['infIncluded'] = $this->infIncluded;
+		}
+
+		if (!is_infinite($this->sup))
+		{
+			$array['sup'] = $this->sup;
+			$array['supIncluded'] = $this->supIncluded;
+		}
+
+		return $array;
 	}
 
 	/**
