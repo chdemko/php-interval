@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Interval" version="2.5.0-DEV&#10;">
   <partials/>
-  <file path="Interval.php" generated-path="Interval.html" hash="1b6e747e9852e9e3fec19821d9dff0cd" package="global">
+  <file path="Interval.php" generated-path="Interval.html" hash="c776ef5d3bc6c79f6ef6eaf295b2d642" package="global">
     <docblock line="0">
       <description>chdemko\Interval\Interval class</description>
       <long-description></long-description>
@@ -307,20 +307,20 @@
           <tag name="since" line="299" description="1.0.0"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="316" package="Interval">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="325" package="Interval">
         <name>__toString</name>
         <full_name>\chdemko\Interval\Interval::__toString()</full_name>
-        <docblock line="316">
+        <docblock line="325">
           <description>Convert the object to a string</description>
           <long-description></long-description>
-          <tag name="return" line="316" description="String representation of this object" type="string">
+          <tag name="return" line="325" description="String representation of this object" type="string">
             <type>string</type>
           </tag>
-          <tag name="since" line="316" description="1.0.0"/>
+          <tag name="since" line="325" description="1.0.0"/>
         </docblock>
       </method>
     </class>
-    <source>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</source>
+    <source>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</source>
   </file>
   <package name="Interval" full_name="Interval"/>
   <package name="global" full_name="global"/>
