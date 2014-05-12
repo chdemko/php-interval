@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Interval" version="2.5.0-DEV&#10;">
   <partials/>
-  <file path="Interval.php" generated-path="Interval.html" hash="b5085498009a54647c218b7a501ace89" package="global">
+  <file path="Interval.php" generated-path="Interval.html" hash="1b6e747e9852e9e3fec19821d9dff0cd" package="global">
     <docblock line="0">
       <description>chdemko\Interval\Interval class</description>
       <long-description></long-description>
@@ -11,6 +11,7 @@
     </docblock>
     <class final="false" abstract="false" namespace="chdemko\Interval" line="24" package="Interval">
       <extends/>
+      <implements>\JsonSerializable</implements>
       <name>Interval</name>
       <full_name>\chdemko\Interval\Interval</full_name>
       <docblock line="24">
@@ -274,31 +275,19 @@
           <type>float</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="283" package="Interval">
-        <name>__toString</name>
-        <full_name>\chdemko\Interval\Interval::__toString()</full_name>
-        <docblock line="283">
-          <description>Convert the object to a string</description>
-          <long-description></long-description>
-          <tag name="return" line="283" description="String representation of this object" type="string">
-            <type>string</type>
-          </tag>
-          <tag name="since" line="283" description="1.0.0"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="299" package="Interval">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="285" package="Interval">
         <name>contains</name>
         <full_name>\chdemko\Interval\Interval::contains()</full_name>
-        <docblock line="299">
+        <docblock line="285">
           <description>Test if a value is contained in the interval</description>
           <long-description></long-description>
-          <tag name="param" line="299" description="&lt;p&gt;Value to be tested&lt;/p&gt;" type="float" variable="$value">
+          <tag name="param" line="285" description="&lt;p&gt;Value to be tested&lt;/p&gt;" type="float" variable="$value">
             <type>float</type>
           </tag>
-          <tag name="return" line="299" description="Membership of value" type="boolean">
+          <tag name="return" line="285" description="Membership of value" type="boolean">
             <type>boolean</type>
           </tag>
-          <tag name="since" line="299" description="1.0.0"/>
+          <tag name="since" line="285" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$value</name>
@@ -306,8 +295,32 @@
           <type>float</type>
         </argument>
       </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="299" package="Interval">
+        <name>jsonSerialize</name>
+        <full_name>\chdemko\Interval\Interval::jsonSerialize()</full_name>
+        <docblock line="299">
+          <description>Serialize the object</description>
+          <long-description></long-description>
+          <tag name="return" line="299" description="Array of values" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="since" line="299" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="316" package="Interval">
+        <name>__toString</name>
+        <full_name>\chdemko\Interval\Interval::__toString()</full_name>
+        <docblock line="316">
+          <description>Convert the object to a string</description>
+          <long-description></long-description>
+          <tag name="return" line="316" description="String representation of this object" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="since" line="316" description="1.0.0"/>
+        </docblock>
+      </method>
     </class>
-    <source>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</source>
+    <source>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</source>
   </file>
   <package name="Interval" full_name="Interval"/>
   <package name="global" full_name="global"/>
