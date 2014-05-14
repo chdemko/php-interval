@@ -20,6 +20,8 @@ namespace chdemko\Interval;
  * @package  Interval
  * 
  * @since    1.0.0
+ *
+ * @todo     Declare properties
  */
 class Interval implements \JsonSerializable
 {
@@ -78,7 +80,7 @@ class Interval implements \JsonSerializable
 	 *
 	 * @return  mixed  The value associated to the property
 	 *
-	 * @since  1.0.0
+	 * @since   1.0.0
 	 */
 	public function __get($property)
 	{
@@ -112,7 +114,7 @@ class Interval implements \JsonSerializable
 	 *
 	 * @return  void
 	 *
-	 * @since  1.0.0
+	 * @since   1.0.0
 	 */
 	public function __set($property, $value)
 	{
