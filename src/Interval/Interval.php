@@ -76,7 +76,7 @@ class Interval implements \JsonSerializable
 	 *
 	 * @param   string  $property  The property
 	 *
-	 * @throws  \OutOfBoundsException  If the property does not exist
+	 * @throws  \RuntimeException  If the property does not exist
 	 *
 	 * @return  mixed  The value associated to the property
 	 *
@@ -99,7 +99,7 @@ class Interval implements \JsonSerializable
 				return $this->supIncluded;
 			break;
 			default:
-				throw new \OutOfBoundsException('Undefined property');
+				throw new \RuntimeException('Undefined property');
 			break;
 		}
 	}
@@ -110,7 +110,7 @@ class Interval implements \JsonSerializable
 	 * @param   string  $property  The property
 	 * @param   mixed   $value     The new value
 	 *
-	 * @throws  \OutOfBoundsException  If the property does not exist
+	 * @throws  \RuntimeException  If the property does not exist
 	 *
 	 * @return  void
 	 *
@@ -147,7 +147,7 @@ class Interval implements \JsonSerializable
 				$this->supIncluded = (bool) $value;
 			break;
 			default:
-				throw new \OutOfBoundsException('Undefined property');
+				throw new \RuntimeException('Undefined property');
 			break;
 		}
 	}

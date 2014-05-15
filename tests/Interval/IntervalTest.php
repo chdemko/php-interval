@@ -187,7 +187,7 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 			false,
 			$interval->supIncluded
 		);
-		$this->setExpectedException('OutOfBoundsException');
+		$this->setExpectedException('RuntimeException');
 		$unexisting = $interval->unexisting;
 	}
 
@@ -240,7 +240,7 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 			$interval->supIncluded
 		);
 
-		$this->setExpectedException('OutOfBoundsException');
+		$this->setExpectedException('RuntimeException');
 		$interval->unexisting = true;
 	}
 
