@@ -153,6 +153,46 @@ class Interval implements \JsonSerializable
 	}
 
 	/**
+	 * Convert the object to a string
+	 *
+	 * @return  string  String representation of this object
+	 *
+	 * @since   1.0.0
+	 */
+	public function __toString()
+	{
+		return
+			($this->infIncluded ? '[' : ']') . $this->inf . ',' .
+			$this->sup . ($this->supIncluded ? ']' : '[');
+	}
+
+	/**
+	 * Serialize the object
+	 *
+	 * @return  array  Array of values
+	 *
+	 * @since   1.0.0
+	 */
+	public function jsonSerialize()
+	{
+		$array = [];
+
+		if (!is_infinite($this->inf))
+		{
+			$array['inf'] = $this->inf;
+			$array['infIncluded'] = $this->infIncluded;
+		}
+
+		if (!is_infinite($this->sup))
+		{
+			$array['sup'] = $this->sup;
+			$array['supIncluded'] = $this->supIncluded;
+		}
+
+		return $array;
+	}
+
+	/**
 	 * Create a new Interval from json
 	 *
 	 * @param   string  $json  A json encoded value
@@ -276,6 +316,18 @@ class Interval implements \JsonSerializable
 	}
 
 	/**
+	 * Test if an interval is empty
+	 *
+	 * @return  boolean  True if the interval is empty
+	 *
+	 * @since   1.0.0
+	 */
+	public function isEmpty()
+	{
+		return $this->inf > $this->sup || $this->inf == $this->sup && !($this->infIncluded && $this->supIncluded);
+	}
+
+	/**
 	 * Test if a value is contained in the interval
 	 *
 	 * @param   float  $value  Value to be tested
@@ -292,42 +344,36 @@ class Interval implements \JsonSerializable
 	}
 
 	/**
-	 * Serialize the object
+	 * Compute the intersection with another interval
 	 *
-	 * @return  array  Array of values
+	 * @param   Interval  $interval  Interval from which to compute intersection
 	 *
-	 * @since   1.0.0
-	 */
-	public function jsonSerialize()
-	{
-		$array = [];
-
-		if (!is_infinite($this->inf))
-		{
-			$array['inf'] = $this->inf;
-			$array['infIncluded'] = $this->infIncluded;
-		}
-
-		if (!is_infinite($this->sup))
-		{
-			$array['sup'] = $this->sup;
-			$array['supIncluded'] = $this->supIncluded;
-		}
-
-		return $array;
-	}
-
-	/**
-	 * Convert the object to a string
-	 *
-	 * @return  string  String representation of this object
+	 * @return  Interval  $this for chaining
 	 *
 	 * @since   1.0.0
 	 */
-	public function __toString()
+	public function intersection(Interval $interval)
 	{
-		return
-			($this->infIncluded ? '[' : ']') . $this->inf . ',' .
-			$this->sup . ($this->supIncluded ? ']' : '[');
+		if ($this->inf < $interval->inf)
+		{
+			$this->inf = $interval->inf;
+			$this->infIncluded = $interval->infIncluded;
+		}
+		elseif ($this->inf == $interval->inf)
+		{
+			$this->infIncluded = $this->infIncluded && $interval->infIncluded;
+		}
+
+		if ($this->sup > $interval->sup)
+		{
+			$this->sup = $interval->sup;
+			$this->supIncluded = $interval->supIncluded;
+		}
+		elseif ($this->sup == $interval->sup)
+		{
+			$this->supIncluded = $this->supIncluded && $interval->supIncluded;
+		}
+
+		return $this;
 	}
 }

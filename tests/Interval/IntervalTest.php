@@ -24,6 +24,116 @@ namespace chdemko\Interval;
 class IntervalTest extends \PHPUnit_Framework_TestCase
 {
 	/**
+	 * Tests  Interval::__get
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::__get
+	 *
+	 * @since   1.0.0
+	 */
+	public function test___get()
+	{
+		$interval = new Interval(2, true, 3, false);
+
+		$this->assertEquals(
+			2,
+			$interval->inf
+		);
+		$this->assertEquals(
+			true,
+			$interval->infIncluded
+		);
+		$this->assertEquals(
+			3,
+			$interval->sup
+		);
+		$this->assertEquals(
+			false,
+			$interval->supIncluded
+		);
+		$this->setExpectedException('RuntimeException');
+		$unexisting = $interval->unexisting;
+	}
+
+	/**
+	 * Tests  Interval::__set
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::__set
+	 *
+	 * @since   1.0.0
+	 */
+	public function test___set()
+	{
+		$interval = new Interval(2, true, 3, false);
+
+		$interval->inf = 1;
+		$this->assertEquals(
+			1,
+			$interval->inf
+		);
+
+		$interval->infIncluded = false;
+		$this->assertEquals(
+			false,
+			$interval->infIncluded
+		);
+
+		$interval->sup = 4;
+		$this->assertEquals(
+			4,
+			$interval->sup
+		);
+
+		$interval->supIncluded = true;
+		$this->assertEquals(
+			true,
+			$interval->supIncluded
+		);
+
+		$interval->infIncluded = true;
+		$interval->inf = - INF;
+		$interval->sup = INF;
+		$this->assertEquals(
+			false,
+			$interval->infIncluded
+		);
+		$this->assertEquals(
+			false,
+			$interval->supIncluded
+		);
+
+		$this->setExpectedException('RuntimeException');
+		$interval->unexisting = true;
+	}
+
+	/**
+	 * Tests  Interval::jsonSerialize
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::jsonSerialize
+	 *
+	 * @since   1.0.0
+	 */
+	public function test_jsonSerialize()
+	{
+		$interval = new Interval(2, true, 3, false);
+		$this->assertEquals(
+			'{"inf":2,"infIncluded":true,"sup":3,"supIncluded":false}',
+			json_encode($interval)
+		);
+
+		$interval = Interval::universe();
+		$this->assertEquals(
+			'[]',
+			json_encode($interval)
+		);
+	}
+
+	/**
 	 * Tests  Interval::fromJson
 	 *
 	 * @return  void
@@ -159,89 +269,43 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Tests  Interval::__get
+	 * Data provider for test_isEmpty
 	 *
-	 * @return  void
-	 *
-	 * @covers  chdemko\Interval\Interval::__get
+	 * @return  array
 	 *
 	 * @since   1.0.0
 	 */
-	public function test___get()
+	public function cases_isEmpty()
 	{
-		$interval = new Interval(2, true, 3, false);
-
-		$this->assertEquals(
-			2,
-			$interval->inf
-		);
-		$this->assertEquals(
-			true,
-			$interval->infIncluded
-		);
-		$this->assertEquals(
-			3,
-			$interval->sup
-		);
-		$this->assertEquals(
-			false,
-			$interval->supIncluded
-		);
-		$this->setExpectedException('RuntimeException');
-		$unexisting = $interval->unexisting;
+		return [
+			['[2,3[', false],
+			['[2,2]', false],
+			['[3,2]', true],
+			['[3,3[', true],
+		];
 	}
 
 	/**
-	 * Tests  Interval::__set
+	 * Tests  Interval::isEmpty
+	 *
+	 * @param   string   $string  Interval as a string
+	 * @param   boolean  $empty   Empty flag
 	 *
 	 * @return  void
 	 *
-	 * @covers  chdemko\Interval\Interval::__set
+	 * @covers  chdemko\Interval\Interval::isEmpty
+	 *
+	 * @dataProvider  cases_isEmpty
 	 *
 	 * @since   1.0.0
 	 */
-	public function test___set()
+	public function test_isEmpty($string, $empty)
 	{
-		$interval = new Interval(2, true, 3, false);
-
-		$interval->inf = 1;
+		$interval = Interval::fromString($string);
 		$this->assertEquals(
-			1,
-			$interval->inf
+			$empty,
+			$interval->isEmpty()
 		);
-
-		$interval->infIncluded = false;
-		$this->assertEquals(
-			false,
-			$interval->infIncluded
-		);
-
-		$interval->sup = 4;
-		$this->assertEquals(
-			4,
-			$interval->sup
-		);
-
-		$interval->supIncluded = true;
-		$this->assertEquals(
-			true,
-			$interval->supIncluded
-		);
-
-		$interval->infIncluded = true;
-		$interval->inf = - INF;
-		$interval->sup = INF;
-		$this->assertEquals(
-			false,
-			$interval->infIncluded
-		);
-		$this->assertEquals(
-			false,
-			$interval->supIncluded
-		);
-
-		$this->setExpectedException('RuntimeException');
-		$interval->unexisting = true;
 	}
 
 	/**
@@ -286,26 +350,42 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Tests  Interval::jsonSerialize
+	 * Data provider for test_intersection
 	 *
-	 * @return  void
-	 *
-	 * @covers  chdemko\Interval\Interval::jsonSerialize
+	 * @return  array
 	 *
 	 * @since   1.0.0
 	 */
-	public function test_jsonSerialize()
+	public function cases_intersection()
 	{
-		$interval = new Interval(2, true, 3, false);
-		$this->assertEquals(
-			'{"inf":2,"infIncluded":true,"sup":3,"supIncluded":false}',
-			json_encode($interval)
-		);
+		return [
+			['[2,10[', ']3,11]', ']3,10['],
+			['[4,13[', ']3,11]', '[4,11]'],
+			['[4,13[', ']4,13]', ']4,13['],
+		];
+	}
 
-		$interval = Interval::universe();
+	/**
+	 * Tests  Interval::intersection
+	 *
+	 * @param   string   $string     Interval as a string
+	 * @param   float    $value      Value to be tested
+	 * @param   boolean  $contained  Contained flag
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::intersection
+	 *
+	 * @dataProvider  cases_intersection
+	 *
+	 * @since   1.0.0
+	 */
+	public function test_intersection($string, $interval, $result)
+	{
+		$interval = Interval::fromString($string)->intersection(Interval::fromString($interval));
 		$this->assertEquals(
-			'[]',
-			json_encode($interval)
+			$result,
+			(string) $interval
 		);
 	}
 }
