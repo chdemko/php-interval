@@ -368,9 +368,9 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * Tests  Interval::intersection
 	 *
-	 * @param   string   $string     Interval as a string
-	 * @param   float    $value      Value to be tested
-	 * @param   boolean  $contained  Contained flag
+	 * @param   string    $string    Interval as a string
+	 * @param   Interval  $interval  Interval for intersection
+	 * @param   string    $result    Result string
 	 *
 	 * @return  void
 	 *
