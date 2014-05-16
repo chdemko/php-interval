@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project title="Interval" version="2.5.0-DEV&#10;">
   <partials/>
-  <file path="Interval.php" generated-path="Interval.html" hash="9fafe898ecc7db49ee9cb3bf84a54cff" package="global">
+  <file path="Interval.php" generated-path="Interval.html" hash="def43dd29fe00dd3f5125af1230a58f7" package="global">
     <docblock line="0">
       <description>chdemko\Interval\Interval class</description>
       <long-description></long-description>
@@ -168,19 +168,43 @@
           <type>mixed</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="164" package="Interval">
-        <name>fromJson</name>
-        <full_name>\chdemko\Interval\Interval::fromJson()</full_name>
-        <docblock line="164">
-          <description>Create a new Interval from json</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="162" package="Interval">
+        <name>__toString</name>
+        <full_name>\chdemko\Interval\Interval::__toString()</full_name>
+        <docblock line="162">
+          <description>Convert the object to a string</description>
           <long-description></long-description>
-          <tag name="param" line="164" description="&lt;p&gt;A json encoded value&lt;/p&gt;" type="string" variable="$json">
+          <tag name="return" line="162" description="String representation of this object" type="string">
             <type>string</type>
           </tag>
-          <tag name="return" line="164" description="A new Interval" type="\chdemko\Interval\Interval">
+          <tag name="since" line="162" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="176" package="Interval">
+        <name>jsonSerialize</name>
+        <full_name>\chdemko\Interval\Interval::jsonSerialize()</full_name>
+        <docblock line="176">
+          <description>Serialize the object</description>
+          <long-description></long-description>
+          <tag name="return" line="176" description="Array of values" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="since" line="176" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="204" package="Interval">
+        <name>fromJson</name>
+        <full_name>\chdemko\Interval\Interval::fromJson()</full_name>
+        <docblock line="204">
+          <description>Create a new Interval from json</description>
+          <long-description></long-description>
+          <tag name="param" line="204" description="&lt;p&gt;A json encoded value&lt;/p&gt;" type="string" variable="$json">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="204" description="A new Interval" type="\chdemko\Interval\Interval">
             <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="164" description="1.0.0"/>
+          <tag name="since" line="204" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$json</name>
@@ -188,19 +212,19 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="185" package="Interval">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="225" package="Interval">
         <name>fromString</name>
         <full_name>\chdemko\Interval\Interval::fromString()</full_name>
-        <docblock line="185">
+        <docblock line="225">
           <description>Create a new Interval from string</description>
           <long-description></long-description>
-          <tag name="param" line="185" description="&lt;p&gt;An interval as a string&lt;/p&gt;" type="string" variable="$string">
+          <tag name="param" line="225" description="&lt;p&gt;An interval as a string&lt;/p&gt;" type="string" variable="$string">
             <type>string</type>
           </tag>
-          <tag name="return" line="185" description="A new Interval" type="\chdemko\Interval\Interval">
+          <tag name="return" line="225" description="A new Interval" type="\chdemko\Interval\Interval">
             <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="185" description="1.0.0"/>
+          <tag name="since" line="225" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$string</name>
@@ -208,34 +232,34 @@
           <type>string</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="243" package="Interval">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="283" package="Interval">
         <name>universe</name>
         <full_name>\chdemko\Interval\Interval::universe()</full_name>
-        <docblock line="243">
+        <docblock line="283">
           <description>Create a new Interval containing all the real line</description>
           <long-description></long-description>
-          <tag name="return" line="243" description="A new Interval" type="\chdemko\Interval\Interval">
+          <tag name="return" line="283" description="A new Interval" type="\chdemko\Interval\Interval">
             <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="243" description="1.0.0"/>
+          <tag name="since" line="283" description="1.0.0"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="258" package="Interval">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="298" package="Interval">
         <name>closed</name>
         <full_name>\chdemko\Interval\Interval::closed()</full_name>
-        <docblock line="258">
+        <docblock line="298">
           <description>Create a new closed Interval</description>
           <long-description></long-description>
-          <tag name="param" line="258" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
+          <tag name="param" line="298" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
             <type>float</type>
           </tag>
-          <tag name="param" line="258" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
+          <tag name="param" line="298" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
             <type>float</type>
           </tag>
-          <tag name="return" line="258" description="A new Interval" type="\chdemko\Interval\Interval">
+          <tag name="return" line="298" description="A new Interval" type="\chdemko\Interval\Interval">
             <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="258" description="1.0.0"/>
+          <tag name="since" line="298" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$inf</name>
@@ -248,22 +272,22 @@
           <type>float</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="273" package="Interval">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="313" package="Interval">
         <name>opened</name>
         <full_name>\chdemko\Interval\Interval::opened()</full_name>
-        <docblock line="273">
+        <docblock line="313">
           <description>Create a new opened Interval</description>
           <long-description></long-description>
-          <tag name="param" line="273" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
+          <tag name="param" line="313" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
             <type>float</type>
           </tag>
-          <tag name="param" line="273" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
+          <tag name="param" line="313" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
             <type>float</type>
           </tag>
-          <tag name="return" line="273" description="A new Interval" type="\chdemko\Interval\Interval">
+          <tag name="return" line="313" description="A new Interval" type="\chdemko\Interval\Interval">
             <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="273" description="1.0.0"/>
+          <tag name="since" line="313" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$inf</name>
@@ -276,19 +300,31 @@
           <type>float</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="287" package="Interval">
-        <name>contains</name>
-        <full_name>\chdemko\Interval\Interval::contains()</full_name>
-        <docblock line="287">
-          <description>Test if a value is contained in the interval</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="325" package="Interval">
+        <name>isEmpty</name>
+        <full_name>\chdemko\Interval\Interval::isEmpty()</full_name>
+        <docblock line="325">
+          <description>Test if an interval is empty</description>
           <long-description></long-description>
-          <tag name="param" line="287" description="&lt;p&gt;Value to be tested&lt;/p&gt;" type="float" variable="$value">
-            <type>float</type>
-          </tag>
-          <tag name="return" line="287" description="Membership of value" type="boolean">
+          <tag name="return" line="325" description="True if the interval is empty" type="boolean">
             <type>boolean</type>
           </tag>
-          <tag name="since" line="287" description="1.0.0"/>
+          <tag name="since" line="325" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="339" package="Interval">
+        <name>contains</name>
+        <full_name>\chdemko\Interval\Interval::contains()</full_name>
+        <docblock line="339">
+          <description>Test if a value is contained in the interval</description>
+          <long-description></long-description>
+          <tag name="param" line="339" description="&lt;p&gt;Value to be tested&lt;/p&gt;" type="float" variable="$value">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="339" description="Membership of value" type="boolean">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="339" description="1.0.0"/>
         </docblock>
         <argument line="0" by_reference="false">
           <name>$value</name>
@@ -296,35 +332,31 @@
           <type>float</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="301" package="Interval">
-        <name>jsonSerialize</name>
-        <full_name>\chdemko\Interval\Interval::jsonSerialize()</full_name>
-        <docblock line="301">
-          <description>Serialize the object</description>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="355" package="Interval">
+        <name>intersection</name>
+        <full_name>\chdemko\Interval\Interval::intersection()</full_name>
+        <docblock line="355">
+          <description>Compute the intersection with another interval</description>
           <long-description></long-description>
-          <tag name="return" line="301" description="Array of values" type="array">
-            <type>array</type>
+          <tag name="param" line="355" description="&lt;p&gt;Interval from which to compute intersection&lt;/p&gt;" type="\chdemko\Interval\Interval" variable="$interval">
+            <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="301" description="1.0.0"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="327" package="Interval">
-        <name>__toString</name>
-        <full_name>\chdemko\Interval\Interval::__toString()</full_name>
-        <docblock line="327">
-          <description>Convert the object to a string</description>
-          <long-description></long-description>
-          <tag name="return" line="327" description="String representation of this object" type="string">
-            <type>string</type>
+          <tag name="return" line="355" description="$this for chaining" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
           </tag>
-          <tag name="since" line="327" description="1.0.0"/>
+          <tag name="since" line="355" description="1.0.0"/>
         </docblock>
+        <argument line="0" by_reference="false">
+          <name>$interval</name>
+          <default></default>
+          <type>\chdemko\Interval\Interval</type>
+        </argument>
       </method>
     </class>
     <markers>
       <todo line="26">Declare properties</todo>
     </markers>
-    <source>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</source>
+    <source>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</source>
   </file>
   <package name="Interval" full_name="Interval"/>
   <package name="global" full_name="global"/>

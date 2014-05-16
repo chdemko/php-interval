@@ -71,6 +71,8 @@
 <li class="method public "><a href="#method_contains" title="contains() :: Test if a value is contained in the interval"><span class="description">Test if a value is contained in the interval</span><pre>contains()</pre></a></li>
 <li class="method public "><a href="#method_fromJson" title="fromJson() :: Create a new Interval from json"><span class="description">Create a new Interval from json</span><pre>fromJson()</pre></a></li>
 <li class="method public "><a href="#method_fromString" title="fromString() :: Create a new Interval from string"><span class="description">Create a new Interval from string</span><pre>fromString()</pre></a></li>
+<li class="method public "><a href="#method_intersection" title="intersection() :: Compute the intersection with another interval"><span class="description">Compute the intersection with another interval</span><pre>intersection()</pre></a></li>
+<li class="method public "><a href="#method_isEmpty" title="isEmpty() :: Test if an interval is empty"><span class="description">Test if an interval is empty</span><pre>isEmpty()</pre></a></li>
 <li class="method public "><a href="#method_jsonSerialize" title="jsonSerialize() :: Serialize the object"><span class="description">Serialize the object</span><pre>jsonSerialize()</pre></a></li>
 <li class="method public "><a href="#method_opened" title="opened() :: Create a new opened Interval"><span class="description">Create a new opened Interval</span><pre>opened()</pre></a></li>
 <li class="method public "><a href="#method_universe" title="universe() :: Create a new Interval containing all the real line"><span class="description">Create a new Interval containing all the real line</span><pre>universe()</pre></a></li>
@@ -290,6 +292,40 @@
 <code>\chdemko\Interval\Interval</code>A new Interval</div>
 </div></div>
 </div>
+<a id="method_intersection"></a><div class="element clickable method public method_intersection" data-toggle="collapse" data-target=".method_intersection .collapse" title="public">
+<h2>Compute the intersection with another interval</h2>
+<pre>intersection(\chdemko\Interval\Interval $interval) : \chdemko\Interval\Interval</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0.0</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$interval</h4>
+<code>\chdemko\Interval\Interval</code><p>Interval from which to compute intersection</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\chdemko\Interval\Interval</code>$this for chaining</div>
+</div></div>
+</div>
+<a id="method_isEmpty"></a><div class="element clickable method public method_isEmpty" data-toggle="collapse" data-target=".method_isEmpty .collapse" title="public">
+<h2>Test if an interval is empty</h2>
+<pre>isEmpty() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>since</th>
+<td>1.0.0</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if the interval is empty</div>
+</div></div>
+</div>
 <a id="method_jsonSerialize"></a><div class="element clickable method public method_jsonSerialize" data-toggle="collapse" data-target=".method_jsonSerialize .collapse" title="public">
 <h2>Serialize the object</h2>
 <pre>jsonSerialize() : array</pre>
@@ -416,7 +452,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.5.0-DEV
 </a> and<br>
-            generated on 2014-05-15T20:40:11Z.<br></footer></div>
+            generated on 2014-05-16T14:48:11Z.<br></footer></div>
 </div>
 </body>
 </html>
