@@ -274,6 +274,23 @@ class Interval implements \JsonSerializable
 	}
 
 	/**
+	 * Copy an Interval
+	 *
+	 * @return  Interval  $this for chaining
+	 *
+	 * @since   1.0.0
+	 */
+	public function copy(Interval $interval)
+	{
+		$this->inf = $interval->inf;
+		$this->infIncluded = $interval->infIncluded;
+		$this->sup = $interval->sup;
+		$this->supIncluded = $interval->supIncluded;
+
+		return $this;
+	}
+
+	/**
 	 * Create a new Interval containing all the real line
 	 *
 	 * @return  Interval  A new Interval

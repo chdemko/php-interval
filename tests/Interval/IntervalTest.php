@@ -227,6 +227,27 @@ class IntervalTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Tests  Interval::copy
+	 *
+	 * @return  void
+	 *
+	 * @covers  chdemko\Interval\Interval::copy
+	 * @covers  chdemko\Interval\Interval::__toString
+	 *
+	 * @since   1.0.0
+	 */
+	public function test_copy()
+	{
+		$interval = new Interval(2, false, 3, true);
+		$copy = Interval::universe()->copy($interval);
+
+		$this->assertEquals(
+			(string) $interval,
+			(string) $copy
+		);
+	}
+
+	/**
 	 * Tests  Interval::closed
 	 *
 	 * @return  void
