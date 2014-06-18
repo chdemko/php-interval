@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="Interval" version="2.5.0&#10;">
+  <partials/>
+  <file path="Interval.php" generated-path="Interval.html" hash="0eb47a6e12b6c799a0922abb5eedf595" package="global">
+    <docblock line="0">
+      <description>chdemko\Interval\Interval class</description>
+      <long-description></long-description>
+      <tag name="author" line="0" description="Christophe Demko" link="mailto:chdemko@gmail.com"/>
+      <tag name="copyright" line="0" description="Copyright (C) 2014 Christophe Demko. All rights reserved."/>
+      <tag name="license" line="0" description="http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html The CeCILL B license&#10;This file is part of the php-interval package https://github.com/chdemko/php-interval"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="chdemko\Interval" line="26" package="Interval">
+      <extends/>
+      <implements>\JsonSerializable</implements>
+      <name>Interval</name>
+      <full_name>\chdemko\Interval\Interval</full_name>
+      <docblock line="26">
+        <description>Interval on the real line</description>
+        <long-description></long-description>
+        <tag name="package" line="26" description="Interval"/>
+        <tag name="since" line="26" description="1.0.0"/>
+        <tag name="todo" line="26" description="Declare properties"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="chdemko\Interval" line="33" package="Interval">
+        <name>$inf</name>
+        <full_name>\chdemko\Interval\Interval::inf</full_name>
+        <default></default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="33" description="&lt;p&gt;inf mark&lt;/p&gt;" type="\chdemko\Interval\number" variable="">
+            <type>\chdemko\Interval\number</type>
+          </tag>
+          <tag name="since" line="33" description="1.0.0"/>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="chdemko\Interval" line="40" package="Interval">
+        <name>$infIncluded</name>
+        <full_name>\chdemko\Interval\Interval::infIncluded</full_name>
+        <default></default>
+        <docblock line="40">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="40" description="&lt;p&gt;included inf mark flag&lt;/p&gt;" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="40" description="1.0.0"/>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="chdemko\Interval" line="47" package="Interval">
+        <name>$sup</name>
+        <full_name>\chdemko\Interval\Interval::sup</full_name>
+        <default></default>
+        <docblock line="47">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="47" description="&lt;p&gt;sup mark&lt;/p&gt;" type="\chdemko\Interval\number" variable="">
+            <type>\chdemko\Interval\number</type>
+          </tag>
+          <tag name="since" line="47" description="1.0.0"/>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="chdemko\Interval" line="54" package="Interval">
+        <name>$supIncluded</name>
+        <full_name>\chdemko\Interval\Interval::supIncluded</full_name>
+        <default></default>
+        <docblock line="54">
+          <description></description>
+          <long-description></long-description>
+          <tag name="var" line="54" description="&lt;p&gt;included sup mark flag&lt;/p&gt;" type="boolean" variable="">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="54" description="1.0.0"/>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="66" package="Interval">
+        <name>__construct</name>
+        <full_name>\chdemko\Interval\Interval::__construct()</full_name>
+        <docblock line="66">
+          <description>Create a new interval</description>
+          <long-description></long-description>
+          <tag name="param" line="66" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="66" description="&lt;p&gt;The included inf mark flag&lt;/p&gt;" type="boolean" variable="$infIncluded">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="66" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="66" description="&lt;p&gt;The included sup mark flag&lt;/p&gt;" type="boolean" variable="$supIncluded">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="66" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inf</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$infIncluded</name>
+          <default></default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$sup</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$supIncluded</name>
+          <default></default>
+          <type>boolean</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="85" package="Interval">
+        <name>__get</name>
+        <full_name>\chdemko\Interval\Interval::__get()</full_name>
+        <docblock line="85">
+          <description>Magic get method</description>
+          <long-description></long-description>
+          <tag name="param" line="85" description="&lt;p&gt;The property&lt;/p&gt;" type="string" variable="$property">
+            <type>string</type>
+          </tag>
+          <tag name="throws" line="85" description="If the property does not exist" type="\RuntimeException">
+            <type>\RuntimeException</type>
+          </tag>
+          <tag name="return" line="85" description="The value associated to the property" type="mixed">
+            <type>mixed</type>
+          </tag>
+          <tag name="since" line="85" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$property</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="119" package="Interval">
+        <name>__set</name>
+        <full_name>\chdemko\Interval\Interval::__set()</full_name>
+        <docblock line="119">
+          <description>Magic set method</description>
+          <long-description></long-description>
+          <tag name="param" line="119" description="&lt;p&gt;The property&lt;/p&gt;" type="string" variable="$property">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="119" description="&lt;p&gt;The new value&lt;/p&gt;" type="mixed" variable="$value">
+            <type>mixed</type>
+          </tag>
+          <tag name="throws" line="119" description="If the property does not exist" type="\RuntimeException">
+            <type>\RuntimeException</type>
+          </tag>
+          <tag name="return" line="119" description="" type="void">
+            <type>void</type>
+          </tag>
+          <tag name="since" line="119" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$property</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="162" package="Interval">
+        <name>__toString</name>
+        <full_name>\chdemko\Interval\Interval::__toString()</full_name>
+        <docblock line="162">
+          <description>Convert the object to a string</description>
+          <long-description></long-description>
+          <tag name="return" line="162" description="String representation of this object" type="string">
+            <type>string</type>
+          </tag>
+          <tag name="since" line="162" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="176" package="Interval">
+        <name>jsonSerialize</name>
+        <full_name>\chdemko\Interval\Interval::jsonSerialize()</full_name>
+        <docblock line="176">
+          <description>Serialize the object</description>
+          <long-description></long-description>
+          <tag name="return" line="176" description="Array of values" type="array">
+            <type>array</type>
+          </tag>
+          <tag name="since" line="176" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="204" package="Interval">
+        <name>fromJson</name>
+        <full_name>\chdemko\Interval\Interval::fromJson()</full_name>
+        <docblock line="204">
+          <description>Create a new Interval from json</description>
+          <long-description></long-description>
+          <tag name="param" line="204" description="&lt;p&gt;A json encoded value&lt;/p&gt;" type="string" variable="$json">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="204" description="A new Interval" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="204" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$json</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="225" package="Interval">
+        <name>fromString</name>
+        <full_name>\chdemko\Interval\Interval::fromString()</full_name>
+        <docblock line="225">
+          <description>Create a new Interval from string</description>
+          <long-description></long-description>
+          <tag name="param" line="225" description="&lt;p&gt;An interval as a string&lt;/p&gt;" type="string" variable="$string">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="225" description="A new Interval" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="225" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$string</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="283" package="Interval">
+        <name>copy</name>
+        <full_name>\chdemko\Interval\Interval::copy()</full_name>
+        <docblock line="283">
+          <description>Copy an Interval</description>
+          <long-description></long-description>
+          <tag name="return" line="283" description="$this for chaining" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="283" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$interval</name>
+          <default></default>
+          <type>\chdemko\Interval\Interval</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="300" package="Interval">
+        <name>universe</name>
+        <full_name>\chdemko\Interval\Interval::universe()</full_name>
+        <docblock line="300">
+          <description>Create a new Interval containing all the real line</description>
+          <long-description></long-description>
+          <tag name="return" line="300" description="A new Interval" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="300" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="315" package="Interval">
+        <name>closed</name>
+        <full_name>\chdemko\Interval\Interval::closed()</full_name>
+        <docblock line="315">
+          <description>Create a new closed Interval</description>
+          <long-description></long-description>
+          <tag name="param" line="315" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="315" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="315" description="A new Interval" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="315" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inf</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$sup</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="chdemko\Interval" line="330" package="Interval">
+        <name>opened</name>
+        <full_name>\chdemko\Interval\Interval::opened()</full_name>
+        <docblock line="330">
+          <description>Create a new opened Interval</description>
+          <long-description></long-description>
+          <tag name="param" line="330" description="&lt;p&gt;The inf mark&lt;/p&gt;" type="float" variable="$inf">
+            <type>float</type>
+          </tag>
+          <tag name="param" line="330" description="&lt;p&gt;The sup mark&lt;/p&gt;" type="float" variable="$sup">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="330" description="A new Interval" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="330" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$inf</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$sup</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="342" package="Interval">
+        <name>isEmpty</name>
+        <full_name>\chdemko\Interval\Interval::isEmpty()</full_name>
+        <docblock line="342">
+          <description>Test if an interval is empty</description>
+          <long-description></long-description>
+          <tag name="return" line="342" description="True if the interval is empty" type="boolean">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="342" description="1.0.0"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="356" package="Interval">
+        <name>contains</name>
+        <full_name>\chdemko\Interval\Interval::contains()</full_name>
+        <docblock line="356">
+          <description>Test if a value is contained in the interval</description>
+          <long-description></long-description>
+          <tag name="param" line="356" description="&lt;p&gt;Value to be tested&lt;/p&gt;" type="float" variable="$value">
+            <type>float</type>
+          </tag>
+          <tag name="return" line="356" description="Membership of value" type="boolean">
+            <type>boolean</type>
+          </tag>
+          <tag name="since" line="356" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$value</name>
+          <default></default>
+          <type>float</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="chdemko\Interval" line="372" package="Interval">
+        <name>intersection</name>
+        <full_name>\chdemko\Interval\Interval::intersection()</full_name>
+        <docblock line="372">
+          <description>Compute the intersection with another interval</description>
+          <long-description></long-description>
+          <tag name="param" line="372" description="&lt;p&gt;Interval from which to compute intersection&lt;/p&gt;" type="\chdemko\Interval\Interval" variable="$interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="return" line="372" description="$this for chaining" type="\chdemko\Interval\Interval">
+            <type>\chdemko\Interval\Interval</type>
+          </tag>
+          <tag name="since" line="372" description="1.0.0"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$interval</name>
+          <default></default>
+          <type>\chdemko\Interval\Interval</type>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="26">Declare properties</todo>
+    </markers>
+    <source>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</source>
+  </file>
+  <package name="Interval" full_name="Interval"/>
+  <package name="global" full_name="global"/>
+  <namespace name="chdemko" full_name="chdemko">
+    <namespace name="Interval" full_name="chdemko\Interval"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>
